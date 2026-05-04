@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "spatialdrought"
+version = "0.1.0"
+description = "Pixel-wise spatial drought index computation on gridded remote sensing data"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = ["remote sensing", "drought", "SPI", "SPEI", "climate", "raster", "xarray"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: GIS",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.8",
+]
+
+[project.optional-dependencies]
+xarray = ["xarray>=0.20", "dask[array]>=2022.1"]
+io = ["rasterio>=1.3", "xarray>=0.20"]
+dev = ["pytest>=7", "pytest-cov", "black", "ruff"]
+all = ["spatialdrought[xarray,io,dev]"]
+
+[project.urls]
+Repository = "https://github.com/yourusername/spatialdrought"
+Documentation = "https://spatialdrought.readthedocs.io"
+
+[tool.hatch.build.targets.wheel]
+packages = ["spatialdrought"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
