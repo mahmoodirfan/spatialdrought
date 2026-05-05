@@ -2,8 +2,8 @@
 spatialdrought: Pixel-wise spatial drought index computation on gridded remote sensing data.
 
 Indices: SPI, SPEI, VCI, TCI, VHI, CDI
-Input:   numpy arrays or xarray DataArrays (time, rows, cols)
-Output:  numpy arrays or xarray DataArrays with preserved coordinates
+Input:   numpy arrays, xarray DataArrays, or GeoTIFF files
+Output:  numpy arrays, xarray DataArrays, or GeoTIFF files
 """
 
 __version__ = "0.1.0"
